@@ -29,7 +29,6 @@ export default defineConfig({
       defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
       locales: {
         en: "en", // The `defaultLocale` value must present in `locales` keys
-        fr: "fr",
       },
     },
   }), starlight({
@@ -48,7 +47,6 @@ export default defineConfig({
       de: { label: "Deutsch", lang: "de" },
       es: { label: "Español", lang: "es" },
       fa: { label: "Persian", lang: "fa", dir: "rtl" },
-      fr: { label: "Français", lang: "fr" },
       ja: { label: "日本語", lang: "ja" },
       "zh-cn": { label: "简体中文", lang: "zh-CN" },
     },
@@ -60,7 +58,6 @@ export default defineConfig({
           de: "Schnellstartanleitungen",
           es: "Guías de Inicio Rápido",
           fa: "راهنمای شروع سریع",
-          fr: "Guides de Démarrage Rapide",
           ja: "クイックスタートガイド",
           "zh-cn": "快速入门指南",
         },

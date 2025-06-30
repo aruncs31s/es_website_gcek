@@ -34,12 +34,12 @@ const googleSVG = `<svg
   </svg>`;
 ---
 
-<button
-  type="button"
-  class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${ringClasses}`}
+<a
+  href="http://localhost:3000/auth/google"
+  class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${ringClasses}`}
 >
   <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
 
   <Fragment set:html={googleSVG} />
   {title}
-</button>
+</a>

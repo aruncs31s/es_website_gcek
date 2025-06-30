@@ -13,19 +13,17 @@ import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
 // Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
-    return id.startsWith("en/");
-  })
+const product: CollectionEntry<"projects">[] = (
+  await getCollection("projects")
 ).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+  (a: CollectionEntry<"projects">, b: CollectionEntry<"projects">) =>
     a.data.main.id - b.data.main.id
 );
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "Projects";
 const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "Explore our diverse range of completed projects, showcasing the durability and precision of our tools and services. Each project is a testament to our commitment to quality and innovation.";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
@@ -61,10 +59,10 @@ const testimonials = [
   },
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `Projects | ${SITE.title}`;
 const metaDescription =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.";
-const ogTitle = "Hardware Tools | ScrewFast";
+  "Explore our diverse range of completed projects, showcasing the durability and precision of our tools and services.";
+const ogTitle = "Projects | ScrewFast";
 ---
 
 <MainLayout
