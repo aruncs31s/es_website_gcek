@@ -23,7 +23,7 @@ const product: CollectionEntry<"projects">[] = (
 // Define variables for page content
 const title: string = "Projects";
 const subTitle: string =
-  "Explore our diverse range of completed projects, showcasing the durability and precision of our tools and services. Each project is a testament to our commitment to quality and innovation.";
+  "Explore our completed and currently ongoing projects at E-IOT GCEK.";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
@@ -61,7 +61,7 @@ const testimonials = [
 
 const pageTitle: string = `Projects | ${SITE.title}`;
 const metaDescription =
-  "Explore our diverse range of completed projects, showcasing the durability and precision of our tools and services.";
+  "Explore our completed and currently ongoing projects at E-IOT GCEK.";
 const ogTitle = "Projects | ScrewFast";
 ---
 
@@ -105,7 +105,7 @@ const ogTitle = "Projects | ScrewFast";
           )
         }
       </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+      <!-- <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} /> -->
     </div>
     {/* Displaying products in alternating styles. Alternative product gets different card styling.
     Maps through all product entries and displays them with either CardSmall or CardWide based on their position. */}
@@ -123,7 +123,7 @@ const ogTitle = "Projects | ScrewFast";
     </section>
   </div>
   {/* Features statistics section */}
-  <FeaturesStatsAlt
+  <!-- <FeaturesStatsAlt
     title="Why Choose ScrewFast?"
     subTitle="Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
     benefits={[
@@ -131,10 +131,10 @@ const ogTitle = "Projects | ScrewFast";
       "Innovative solutions tailored to modern construction needs.",
       "Customer support dedicated to your project's success.",
     ]}
-  />
+  /> -->
   {/* Testimonials section */}
-  <TestimonialsSectionAlt
+  <!-- <TestimonialsSectionAlt
     title="What Our Customers Say"
     testimonials={testimonials}
-  />
+  /> -->
 </MainLayout>

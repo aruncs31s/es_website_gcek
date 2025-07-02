@@ -57,12 +57,7 @@ const projectsCollection = defineCollection({
       first: image().optional(),
       second: image().optional(),
     }),
-    circuitDiagram: z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      imageAlt: z.string(),
-    }).optional(),
+    
   }),
 });
 

@@ -62,12 +62,9 @@ window.handleCredentialResponse = async (response) => {
       updateUI(user);
 
       // Close the login modal
-      const loginModal = document.getElementById('hs-toggle-between-modals-login-modal');
-      if (loginModal && window.HSOverlay) {
-        const overlay = window.HSOverlay.getInstance(loginModal, true);
-        if (overlay) {
-          overlay.hide();
-        }
+      const loginModalSelector = '#hs-toggle-between-modals-login-modal';
+      if (document.querySelector(loginModalSelector) && window.HSOverlay) {
+        window.HSOverlay.close(loginModalSelector);
       }
 
     } catch (error) {

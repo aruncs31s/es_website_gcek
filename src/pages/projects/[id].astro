@@ -54,7 +54,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
   </div>
 
   <section
-    class="mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+    class="p-10 mx-auto flex max-w-[85rem] flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <div>
       <p
@@ -106,6 +106,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
           />
         ))
       }
+      
     </nav>
 
     <div class="mt-12 md:mt-16">
@@ -265,34 +266,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
     </div>
   </div>
 
-  <div id="tabs-with-card-4" class="hidden" role="tabpanel">
-    {product.data.circuitDiagram && (
-      <div class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14">
-        <div class="grid gap-12 md:grid-cols-2">
-          <div class="lg:w-3/4">
-            <h2
-              class="text-3xl font-bold tracking-tight text-balance text-neutral-800 md:leading-tight lg:text-4xl dark:text-neutral-200"
-            >
-              {product.data.circuitDiagram.title}
-            </h2>
-            <p
-              class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
-            >
-              {product.data.circuitDiagram.description}
-            </p>
-          </div>
-
-          <div class="space-y-6 lg:space-y-10">
-            <Image
-              src={product.data.circuitDiagram.image}
-              alt={product.data.circuitDiagram.imageAlt}
-              class="w-full rounded-xl object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    )}
-  </div>
+  
 </MainLayout>
 
 <script>

@@ -23,10 +23,11 @@ const crafted: string = "Crafted by";
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
         <!-- Brand Logo -->
-        <BrandLogo class="h-auto w-32" />
+         <!-- TODO: Make custom Logo -->
+        <!-- <BrandLogo class="h-auto w-32" /> -->
       </div>
       <!-- An array of links for Product and Company sections -->
-      {
+      <!-- {
         strings.footerLinks.map((section) => (
           <div class="col-span-1">
             <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
@@ -41,19 +42,19 @@ const crafted: string = "Crafted by";
                   >
                     {link.name}
                   </a>
-                  {section.section === "Company" && index === 2 ? (
+                  {/* {section.section === "Company" && index === 2 ? (
                     <span class="ms-1 inline rounded-lg bg-orange-500 px-2 py-1 text-xs font-bold text-neutral-50">
                       We're hiring!
                     </span>
-                  ) : null}
+                  ) : null} */}
                 </li>
               ))}
             </ul>
           </div>
         ))
-      }
+      } -->
 
-      <div class="col-span-2">
+      <!-- <div class="col-span-2">
         <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
           {sectionThreeTitle}
         </h3>
@@ -65,12 +66,12 @@ const crafted: string = "Crafted by";
           </p>
         </form>
       </div>
-    </div>
+    </div> -->
 
     <div
       class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
     >
-      <div class="flex items-center justify-between">
+      <!-- <div class="flex items-center justify-between">
         <p class="text-sm text-neutral-600 dark:text-neutral-400">
           © <span id="current-year"></span> {SITE.title}. {crafted}
           <a
@@ -80,10 +81,10 @@ const crafted: string = "Crafted by";
             rel="noopener noreferrer">gulamoff</a
           >.
         </p>
-      </div>
+      </div> -->
 
       <!-- Social Brands -->
-      <div>
+      <div class="flex items-center justify-between gap-x-4">
         <FooterSocialLink url={strings.socialLinks.facebook}
           ><Icon name="facebookFooter" />
         </FooterSocialLink>
