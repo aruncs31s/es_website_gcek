@@ -64,8 +64,6 @@ const projectsCollection = defineCollection({
       codeSnippet: z.string(),
     }).optional(),
   }),
-    
-  }),
 });
 
 const blogCollection = defineCollection({
