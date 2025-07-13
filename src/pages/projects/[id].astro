@@ -1,7 +1,7 @@
 ---
 // Import section components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
+import projectTabBtn from "@components/ui/buttons/projectTabBtn.astro";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
@@ -14,23 +14,23 @@ declare global {
   }
 }
 
-// This gets the static paths for all the unique products
+// This gets the static paths for all the unique projects
 
 export async function getStaticPaths() {
-  const productEntries = await getCollection("projects");
-  return productEntries.map((product) => {
+  const projectEntries = await getCollection("projects");
+  return projectEntries.map((project) => {
     return {
-      params: { id: product.id },
-      props: { product },
+      params: { id: project.id },
+      props: { project },
     };
   });
 }
 
-const { product } = Astro.props;
+const { project } = Astro.props;
 
-const pageTitle: string = `${product.data.title} | ${SITE.title}`;
-const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Projects | ScrewFast`;
+const pageTitle: string = `${project.data.title} | ${SITE.title}`;
+const metaDescription = project.data.description;
+const ogTitle = `${project.data.title} | Projects | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -39,11 +39,11 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
   customOgTitle={ogTitle}
   structuredData={{
     "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `https://screwfast.uk/projects/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
-    url: `https://screwfast.uk/projects/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
-    name: product.data.title,
-    description: product.data.description,
+    "@type": "project",
+    "@id": `https://screwfast.uk/projects/${project.data.title.toLowerCase().replace(/\s+/g, "-")}`,
+    url: `https://screwfast.uk/projects/${project.data.title.toLowerCase().replace(/\s+/g, "-")}`,
+    name: project.data.title,
+    description: project.data.description,
     brand: {
       "@type": "Brand",
       name: "ScrewFast",
@@ -61,7 +61,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
         id="fadeText"
         class="mb-8 max-w-prose font-light text-pretty text-neutral-700 sm:text-xl dark:text-neutral-300"
       >
-        {product.data.main.content}
+        {project.data.main.content}
       </p>
     </div>
     <div
@@ -71,18 +71,18 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
         <h1
           class="block text-4xl font-bold tracking-tighter text-neutral-800 sm:text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200"
         >
-          {product.data.title}
+          {project.data.title}
         </h1>
         <p class="text-lg text-neutral-600 dark:text-neutral-400">
-          {product.data.description}
+          {project.data.description}
         </p>
       </div>
       <div>
         <Image
           id="fadeInMoveRight"
-          src={product.data.main.imgMain}
+          src={project.data.main.imgMain}
           class="w-[600px]"
-          alt={product.data.main.imgAlt}
+          alt={project.data.main.imgAlt}
           format={"avif"}
           loading={"eager"}
         />
@@ -97,8 +97,8 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
       role="tablist"
     >
       {
-        product.data.tabs.map((tab, index) => (
-          <ProductTabBtn
+        project.data.tabs.map((tab, index) => (
+          <projectTabBtn
             title={tab.title}
             id={tab.id}
             dataTab={tab.dataTab}
@@ -117,24 +117,24 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
               <h2
                 class="text-3xl font-bold tracking-tight text-balance text-neutral-800 md:leading-tight lg:text-4xl dark:text-neutral-200"
               >
-                {product.data.longDescription.title}
+                {project.data.longDescription.title}
               </h2>
               <p
                 class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400"
               >
-                {product.data.longDescription.subTitle}
+                {project.data.longDescription.subTitle}
               </p>
               <p class="mt-5">
                 <PrimaryCTA
-                  title={product.data.longDescription.btnTitle}
-                  url={product.data.longDescription.btnURL}
+                  title={project.data.longDescription.btnTitle}
+                  url={project.data.longDescription.btnURL}
                 />
               </p>
             </div>
 
             <div class="space-y-6 lg:space-y-10">
               {
-                product.data.descriptionList.map((list) => (
+                project.data.descriptionList.map((list) => (
                   <div class="flex">
                     <div>
                       <h3 class="text-base font-bold text-neutral-800 sm:text-lg dark:text-neutral-200">
@@ -157,7 +157,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
           <div class="grid w-full grid-cols-1 gap-x-16 md:grid-cols-2">
             <div class="max-w-md space-y-6">
               {
-                product.data.specificationsLeft.map((spec) => (
+                project.data.specificationsLeft.map((spec) => (
                   <div>
                     <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
                       {spec.title}
@@ -170,9 +170,9 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
               }
             </div>
             {
-              product.data.specificationsRight ? (
+              project.data.specificationsRight ? (
                 <div class="mt-6 max-w-md space-y-6 md:mt-0 md:ml-auto">
-                  {product.data.specificationsRight?.map((spec) => (
+                  {project.data.specificationsRight?.map((spec) => (
                     <div>
                       <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
                         {spec.title}
@@ -183,7 +183,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
                     </div>
                   ))}
                 </div>
-              ) : product.data.tableData ? (
+              ) : project.data.tableData ? (
                 <div class="mt-6 space-y-6 md:mt-0 md:ml-auto">
                   <div class="flex flex-col">
                     <div class="-m-1.5 overflow-x-auto">
@@ -192,7 +192,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
                           <table class="min-w-full divide-y divide-neutral-300 dark:divide-neutral-700">
                             <thead>
                               <tr>
-                                {product.data.tableData?.[0].feature?.map(
+                                {project.data.tableData?.[0].feature?.map(
                                   (header) => (
                                     <th
                                       scope="col"
@@ -205,7 +205,7 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
                               </tr>
                             </thead>
                             <tbody class="divide-y divide-neutral-300 dark:divide-neutral-700">
-                              {product.data.tableData?.map((row) =>
+                              {project.data.tableData?.map((row) =>
                                 // Wrap each row's content in a separate <tr> element
                                 row.description.map((rowData) => (
                                   <tr>
@@ -240,9 +240,9 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
         class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0"
       >
         {
-          product.data.blueprints.first && (
+          project.data.blueprints.first && (
             <Image
-              src={product.data.blueprints.first}
+              src={project.data.blueprints.first}
               class="h-full w-full object-cover object-center"
               alt="Blueprint Illustration"
               format={"avif"}
@@ -253,9 +253,9 @@ const ogTitle = `${product.data.title} | Projects | ScrewFast`;
 
       <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
         {
-          product.data.blueprints.second && (
+          project.data.blueprints.second && (
             <Image
-              src={product.data.blueprints.second}
+              src={project.data.blueprints.second}
               class="h-full w-full object-cover object-center"
               alt="Blueprint Illustration"
               format={"avif"}
