@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  
   /* https://tailwindcss.com/docs/colors#customizing-your-colors */
   --color-*: initial;
   --color-transparent: transparent;
@@ -36,7 +37,20 @@
   --color-indigo-900: oklch(0.359 0.144 278.697);
   --color-indigo-950: oklch(0.257 0.09 281.288);
 
-  --color-neutral-50: oklch(0.985 0 0);
+   /* Catppuccin Surface Colors */
+   --color-neutral-50: #cdd6f4;  /* Text */
+   --color-neutral-100: #bac2de; /* Subtext1 */
+   --color-neutral-200: #a6adc8; /* Subtext0 */
+   --color-neutral-300: #9399b2; /* Overlay2 */
+   --color-neutral-400: #7f849c; /* Overlay1 */
+   --color-neutral-500: #6c7086; /* Overlay0 */
+   --color-neutral-600: #585b70; /* Surface2 */
+   --color-neutral-700: #45475a; /* Surface1 */
+   --color-neutral-800: #313244; /* Surface0 */
+   --color-neutral-900: #1e1e2e; /* Base */
+   --color-neutral-950: #11111b; /* Mantle */
+ 
+  /* --color-neutral-50: oklch(0.985 0 0);
   --color-neutral-100: oklch(0.97 0 0);
   --color-neutral-200: oklch(0.922 0 0);
   --color-neutral-300: oklch(0.87 0 0);
@@ -46,14 +60,15 @@
   --color-neutral-700: oklch(0.371 0 0);
   --color-neutral-800: oklch(0.269 0 0);
   --color-neutral-900: oklch(0.205 0 0);
-  --color-neutral-950: oklch(0.145 0 0);
+  --color-neutral-950: oklch(0.145 0 0); */
 
   --color-yellow-50: oklch(0.987 0.026 102.212);
   --color-yellow-100: oklch(0.973 0.071 103.193);
   --color-yellow-200: oklch(0.945 0.129 101.54);
   --color-yellow-300: oklch(0.905 0.182 98.111);
   --color-yellow-400: oklch(0.852 0.199 91.936);
-  --color-yellow-500: oklch(0.795 0.184 86.047);
+  /* --color-yellow-500: oklch(0.795 0.184 86.047); */
+  --color-yellow-500: #f9e2af;   /* Yellow */
   --color-yellow-600: oklch(0.681 0.162 75.834);
   --color-yellow-700: oklch(0.554 0.135 66.442);
   --color-yellow-800: oklch(0.476 0.114 61.907);
@@ -65,7 +80,8 @@
   --color-orange-200: oklch(0.901 0.076 70.697);
   --color-orange-300: oklch(70.72% 0.182 40.56);
   --color-orange-400: oklch(67.4% 0.2072 39.23);
-  --color-orange-500: oklch(61.86% 0.1946 38.88);
+  /* --color-orange-500: oklch(61.86% 0.1946 38.88); */
+  --color-orange-500: #fab387;   /* Peach */
   --color-orange-600: oklch(0.646 0.222 41.116);
   --color-orange-700: oklch(0.553 0.195 38.402);
   --color-orange-800: oklch(0.47 0.157 37.304);
@@ -77,7 +93,8 @@
   --color-red-200: oklch(0.885 0.062 18.334);
   --color-red-300: oklch(0.808 0.114 19.571);
   --color-red-400: oklch(0.704 0.191 22.216);
-  --color-red-500: oklch(0.637 0.237 25.331);
+  /* --color-red-500: oklch(0.637 0.237 25.331); */
+  --color-red-500: #f38ba8;     /* Red */
   --color-red-600: oklch(0.577 0.245 27.325);
   --color-red-700: oklch(0.505 0.213 27.518);
   --color-red-800: oklch(0.444 0.177 26.899);
@@ -95,6 +112,18 @@
   --color-zinc-800: oklch(0.274 0.006 286.033);
   --color-zinc-900: oklch(0.21 0.006 285.885);
   --color-zinc-950: oklch(0.141 0.005 285.823);
+
+  --color-green-500: #a6e3a1;    /* Green */
+  --color-blue-500: #89b4fa;     /* Blue */
+  --color-indigo-500: #b4befe;   /* Lavender */
+  --color-purple-500: #cba6f7;   /* Mauve */
+  --color-pink-500: #f5c2e7;     /* Pink */
+
+  /* Custom Color */
+  --color-custom-button: #7287fd; /* Custom Button Color */
+  --color-custom-button-active: #8839ef;
+
+
 }
 
 /*
